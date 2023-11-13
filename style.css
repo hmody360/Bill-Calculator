@@ -1,0 +1,109 @@
+:root {
+    --bg-color: rgb(140, 91, 255);
+    --body-height: 100vh;
+    --body-margin-bottom: 0px;
+    --calc-container-width: 40%;
+    --calc-container-height: 85%;
+    --calc-container-bg-color: rgb(34, 14, 70);
+    --calc-container-padding: 20px;
+    --calc-container-border-radius: 20px 20px 0px 0px;
+    --input-container-width: 300px;
+    --result-container-width: 100%;
+    --people-container-width: 115px;
+    --main-text-color: rgb(250, 250, 250);
+    --main-font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    --main-header-font-size: 20px;
+    --text-margin: 20px 0px;
+    --sub-header-font-size: 16px;
+    --total-font-size: 48px;
+    --textbox-width: 90%;
+    --textbox-height: 30px;
+    --textbox-border-radius: 20px;
+    --textbox-bg-color: rgb(235, 165, 255);
+    --button-width: 30px;
+    --button-height: 30px;
+    --button-bg-color: rgb(235, 165, 255);
+    --button-border-radius: 15px;
+}
+.body {
+    background: var(--bg-color);
+    color: var(--main-text-color);
+    font-family: var(--main-font-family);
+    height: var(--body-height);
+    margin-bottom: var(--body-margin-bottom);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+}
+.calculatorContainer {
+    width: var(--calc-container-width);
+    height: var(--calc-container-height);
+    background: var(--calc-container-bg-color);
+    padding: var(--calc-container-padding);
+    border-radius: var(--calc-container-border-radius);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-width: fit-content;
+}
+.inputContainer {
+    width: var(--input-container-width);
+}
+.resultContainer {
+    width: var(--result-container-width);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.peopleContainer {
+    width: var(--people-container-width);
+    display: flex;
+    flex-direction: column;
+}
+.PeoplePickContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+.mainHeader {
+    font-size: var(--main-header-font-size);
+    margin: var(--text-margin)
+}
+.subHeader {
+    font-size: var(--sub-header-font-size);
+    margin: var(--text-margin)
+}
+#billTotalInput {
+    background: url(images/dollar.png) no-repeat scroll 4px 4px;
+    background-color: var(--textbox-bg-color);
+}
+#tipInput {
+    background: url(images/precentage.png) no-repeat scroll 7px 4px;
+    background-color: var(--textbox-bg-color);
+}
+.textbox {
+    width: var(--textbox-width);
+    height: var(--textbox-height);
+    padding-left: 30px;
+    font-family: var(--main-font-family);
+    font-size: var(--main-header-font-size);
+    color: var(--main-text-color);
+    border-radius: var(--textbox-border-radius);
+}
+.button {
+    width: var(--button-width);
+    height: var(--button-height);
+    background: var(--button-bg-color);
+    border: none;
+    border-radius: var(--button-border-radius);
+}
+.button :hover {
+    color: var(--main-text-color);
+}
+
+

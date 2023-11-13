@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/70c1e0c780.js" crossorigin="anonymous"></script>
+    <title>Bill Calculator</title>
+</head>
+<body class="body">
+    <div class="calculatorContainer">
+        <div class="inputContainer">
+            <h5 class="mainHeader">Bill Total:</h5>
+            <input type="text" class="textbox" id="billTotalInput" value="0">
+            <h5 class="mainHeader">Tip:</h5>
+            <input type="text" class="textbox" id="tipInput" value="0">
+        </div>
+        <div class="resultContainer">
+            <div class="peopleContainer">
+                <h6 class="subHeader">People</h6>
+                <div class="PeoplePickContainer">
+                    <Button class="button" id="increasePeople"><i class="fa-solid fa-plus"></i></Button>
+                    <h4 id="numberOfPeople" value = "1">1</h4>
+                    <button class="button" id="decreasePeople"><i class="fa-solid fa-minus"></i></button>
+                </div>
+            </div>
+            <div class="totalContainer">
+                <h6 class="subHeader">Total per Person</h6>
+                <h2 id="perPersonTotal" value="0">0</h2>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
