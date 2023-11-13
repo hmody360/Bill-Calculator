@@ -105,5 +105,9 @@
 .button :hover {
     color: var(--main-text-color);
 }
+#error {
+    display: none;
+    color: red;
+}
 
 

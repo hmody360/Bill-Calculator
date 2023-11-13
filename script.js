@@ -4,6 +4,7 @@ let peopleInput = document.getElementById("numberOfPeople")
 let totalResult = document.getElementById("perPersonTotal")
 let increaseBtn = document.getElementById("increasePeople")
 let decreaseBtn = document.getElementById("decreasePeople")
+let error = document.getElementById("error")
 peopleInput.value = 1
 
 increaseBtn.onclick = () => {
@@ -11,6 +12,7 @@ increaseBtn.onclick = () => {
     peopleInput.value = Number(peopleInput.innerText)
     console.log(peopleInput.value);
     perPersonTotal(billInput.value, tipInput.value, peopleInput.value);
+    checkValid()
 }
 decreaseBtn.onclick = () => {
     if (peopleInput.value > 1) {
@@ -19,6 +21,7 @@ decreaseBtn.onclick = () => {
         perPersonTotal(billInput.value, tipInput.value, peopleInput.value);
     }
     console.log(peopleInput.value)
+    checkValid()
 }
 const perPersonTotal = (bill, tip, people) => {
     tipPrecentage = tip/100;
@@ -26,27 +29,22 @@ const perPersonTotal = (bill, tip, people) => {
     let perPersonTotalResult = (tipAmount+Number(bill))/people
     totalResult.innerText = perPersonTotalResult;
 }
-billInput.oninput = () => {
-    console.log(billInput.value)
-    if (billInput.value.match(/^[0-9]+$/)){
-        totalResult.style.color = "rgb(250, 250, 250)"
+const checkValid = () => {
+    if (tipInput.value.match(/^[0-9]+$/) && billInput.value.match(/^[0-9]+$/)){
+        error.style.display = "none"
         perPersonTotal(billInput.value, tipInput.value, peopleInput.value);
 
     } else {
-        totalResult.style.color = "red"
-        totalResult.innerText = "Input Can't Contain Non-Numbers or be empty"
+        error.style.display = "block"
+        totalResult.innerText = "Invalid"
     }
-
+}
+billInput.oninput = () => {
+    console.log(billInput.value)
+    checkValid()
 }
 tipInput.oninput = () => {
     console.log(tipInput.value)
-    if (billInput.value.match(/^[0-9]+$/)){
-        totalResult.style.color = "rgb(250, 250, 250)"
-        perPersonTotal(billInput.value, tipInput.value, peopleInput.value);
-    } else {
-        totalResult.style.color = "red"
-        totalResult.innerText = "Input Can't Contain Non-numbers or be empty"
-
-    }
+    checkValid()
 }
 
