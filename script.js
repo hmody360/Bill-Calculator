@@ -27,10 +27,10 @@ const perPersonTotal = (bill, tip, people) => {
     tipPrecentage = tip/100;
     tipAmount = bill*tipPrecentage
     let perPersonTotalResult = (tipAmount+Number(bill))/people
-    totalResult.innerText = perPersonTotalResult;
+    totalResult.innerText = `$${Math.round(perPersonTotalResult)}`
 }
 const checkValid = () => {
-    if (tipInput.value.match(/^[0-9]+$/) && billInput.value.match(/^[0-9]+$/)){
+    if (tipInput.value.match(/^[-+]?\d*\.?\d+$/) && billInput.value.match(/^[-+]?\d*\.?\d+$/)){
         error.style.display = "none"
         perPersonTotal(billInput.value, tipInput.value, peopleInput.value);
 
